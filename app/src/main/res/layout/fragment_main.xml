@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:theme="@style/TitleText"
+        android:id="@+id/main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quiz"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <ImageView
+        android:id="@+id/image_main"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_ar_tut"
+        app:layout_constraintTop_toBottomOf="@id/main_title"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/main_amount_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Questions amount"
+        app:layout_constraintTop_toBottomOf="@id/image_main"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/page_big_margin"
+        android:layout_marginTop="16dp"
+        android:theme="@style/AppTheme.HintText"/>
+
+    <TextView
+        android:id="@+id/main_questions_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/main_amount_hint"
+        app:layout_constraintBottom_toBottomOf="@+id/main_amount_hint"
+        app:layout_constraintLeft_toRightOf="@+id/main_amount_hint"
+        android:layout_marginLeft="4dp"
+        android:text="10"
+        android:textColor="@color/dark_purple"
+        android:fontFamily="@font/san_francisco_medium"
+        android:textSize="15sp"/>
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/main_amount_seek_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/main_amount_hint"
+        app:layout_constraintTop_toBottomOf="@+id/main_amount_hint"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        android:max="50"
+        android:progress="10"
+        android:layout_marginRight="@dimen/page_big_margin"/>
+
+    <TextView
+        android:id="@+id/main_category_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/main_amount_seek_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/page_big_margin"
+        android:layout_marginTop="16dp"
+        android:text="Category:"
+        android:theme="@style/AppTheme.HintText"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/main_category_spinner_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_category_hint"
+        android:layout_marginLeft="@dimen/page_big_margin"
+        android:layout_marginRight="@dimen/page_big_margin"
+        android:layout_marginTop="8dp">
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/main_category_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:entries="@array/categories"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/main_difficulty_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/main_category_spinner_container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/page_big_margin"
+        android:layout_marginTop="16dp"
+        android:text="Difficulty:"
+        android:theme="@style/AppTheme.HintText"/>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/main_difficulty_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_difficulty_hint"
+        android:layout_marginLeft="@dimen/page_big_margin"
+        android:layout_marginRight="@dimen/page_big_margin"
+        android:layout_marginTop="8dp"
+        android:entries="@array/difficulty"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/main_start"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/main_difficulty_spinner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/main_difficulty_spinner"
+        app:layout_constraintRight_toRightOf="@id/main_difficulty_spinner"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="@color/blue"
+        app:cardUseCompatPadding="true">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/san_francisco_medium"
+            android:textSize="17sp"
+            android:text="Start"/>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
